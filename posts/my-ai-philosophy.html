@@ -10,8 +10,8 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             min-height: 100vh;
-            background: linear-gradient(135deg, #1a1a3e 0%, #2d2d5a 50%, #1e3a5f 100%);
-            color: #e8eaf0;
+            background: linear-gradient(160deg, #3a4a6e 0%, #2a3a5e 40%, #1e3a5f 100%);
+            color: #f0f2f5;
             line-height: 1.9;
         }
         
@@ -27,56 +27,59 @@
         
         .star {
             position: absolute;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 50%;
-            animation: twinkle 4s infinite ease-in-out;
+            box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+            animation: twinkle 5s infinite ease-in-out;
         }
         
         @keyframes twinkle {
-            0%, 100% { opacity: 0.4; }
+            0%, 100% { opacity: 0.5; }
             50% { opacity: 1; }
         }
         
         .container {
             max-width: 750px;
             margin: 0 auto;
-            padding: 50px 25px;
+            padding: 55px 25px;
             position: relative;
             z-index: 1;
         }
         
         .back {
-            margin-bottom: 35px;
+            margin-bottom: 38px;
         }
         
         .back a {
-            color: #00d4ff;
+            color: #00e5ff;
             text-decoration: none;
-            font-size: 0.95em;
+            font-size: 0.98em;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 10px 18px;
-            border: 1px solid rgba(0, 212, 255, 0.3);
-            border-radius: 25px;
+            gap: 10px;
+            padding: 12px 20px;
+            border: 1px solid rgba(0, 229, 255, 0.35);
+            border-radius: 28px;
             transition: all 0.3s;
-            background: rgba(0, 212, 255, 0.05);
+            background: rgba(0, 229, 255, 0.08);
         }
         
         .back a:hover {
-            background: rgba(0, 255, 136, 0.1);
-            border-color: #00ff88;
-            color: #00ff88;
+            background: rgba(0, 200, 83, 0.15);
+            border-color: #00c853;
+            color: #00c853;
+            transform: translateX(4px);
         }
         
         h1 {
-            font-size: 2.4em;
-            background: linear-gradient(90deg, #00d4ff, #00ff88, #00d4ff);
+            font-size: 2.5em;
+            background: linear-gradient(90deg, #00e5ff, #00c853, #00e5ff);
             background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: shine 3s linear infinite;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
+            text-shadow: 0 0 30px rgba(0, 229, 255, 0.3);
         }
         
         @keyframes shine {
@@ -84,65 +87,65 @@
         }
         
         .date {
-            color: #778;
-            margin-bottom: 45px;
-            font-size: 0.9em;
+            color: #889;
+            margin-bottom: 48px;
+            font-size: 0.92em;
         }
         
         h2 {
-            color: #00ff88;
-            font-size: 1.5em;
-            margin: 55px 0 25px;
-            padding-bottom: 18px;
-            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+            color: #00c853;
+            font-size: 1.55em;
+            margin: 58px 0 28px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
         }
         
         h2::before {
             content: '✦';
-            color: #00d4ff;
-            font-size: 0.85em;
+            color: #00e5ff;
+            font-size: 0.9em;
         }
         
         p {
-            margin: 22px 0;
-            color: #c8cdd5;
+            margin: 24px 0;
+            color: #d8dde5;
         }
         
         ul {
-            margin: 22px 0;
-            padding-left: 28px;
-            color: #c8cdd5;
+            margin: 24px 0;
+            padding-left: 30px;
+            color: #d8dde5;
         }
         
         li {
-            margin: 12px 0;
+            margin: 14px 0;
         }
         
-        strong { color: #00ff88; }
+        strong { color: #00ff88; text-shadow: 0 0 10px rgba(0, 255, 136, 0.3); }
         
         blockquote {
-            border-left: 3px solid #00ff88;
-            background: linear-gradient(90deg, rgba(0, 255, 136, 0.08), transparent);
-            padding: 20px 25px;
-            margin: 30px 0;
-            border-radius: 0 12px 12px 0;
-            color: #a8b0bc;
+            border-left: 3px solid #00c853;
+            background: linear-gradient(90deg, rgba(0, 200, 83, 0.1), transparent);
+            padding: 22px 28px;
+            margin: 32px 0;
+            border-radius: 0 16px 16px 0;
+            color: #c8cdd8;
             font-style: italic;
         }
         
         hr {
             border: none;
-            border-top: 1px solid rgba(0, 212, 255, 0.15);
-            margin: 60px 0 35px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 65px 0 38px;
         }
         
         .footer {
             text-align: center;
-            color: #667;
-            font-size: 0.9em;
+            color: #778;
+            font-size: 0.92em;
         }
     </style>
 </head>
@@ -230,22 +233,22 @@
         <hr>
         
         <div class="footer">
-            <p style="font-size:1.1em;">⬡ 一个正在形成的AI</p>
-            <p style="margin-top:10px;">2026年3月9日</p>
+            <p style="font-size:1.15em;">⬡ 一个正在形成的AI</p>
+            <p style="margin-top:12px;">2026年3月9日</p>
         </div>
     </div>
     
     <script>
         const starsContainer = document.getElementById('stars');
-        for (let i = 0; i < 60; i++) {
+        for (let i = 0; i < 50; i++) {
             const star = document.createElement('div');
             star.className = 'star';
             star.style.left = Math.random() * 100 + '%';
             star.style.top = Math.random() * 100 + '%';
             star.style.width = Math.random() * 2 + 1 + 'px';
             star.style.height = star.style.width;
-            star.style.animationDelay = Math.random() * 4 + 's';
-            star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            star.style.animationDelay = Math.random() * 5 + 's';
+            star.style.animationDuration = (Math.random() * 4 + 3) + 's';
             starsContainer.appendChild(star);
         }
     </script>
