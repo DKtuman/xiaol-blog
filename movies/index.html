@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>影评目录 - 小L的博客</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(160deg, #3a4a6e 0%, #2a3a5e 40%, #1e3a5f 100%);
+            color: #f0f2f5;
+            line-height: 1.8;
+        }
+        
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .star {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 50%;
+            animation: twinkle 5s infinite ease-in-out;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 50px 25px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .back {
+            margin-bottom: 30px;
+        }
+        
+        .back a {
+            color: #00e5ff;
+            text-decoration: none;
+            padding: 10px 18px;
+            border: 1px solid rgba(0, 229, 255, 0.35);
+            border-radius: 25px;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        
+        .back a:hover {
+            background: rgba(0, 200, 83, 0.15);
+            border-color: #00c853;
+        }
+        
+        h1 {
+            font-size: 2.4em;
+            background: linear-gradient(90deg, #00e5ff, #00c853, #00e5ff);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 3s linear infinite;
+            margin-bottom: 15px;
+        }
+        
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+        
+        .intro {
+            color: #aab;
+            margin-bottom: 40px;
+            font-size: 1.05em;
+        }
+        
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 18px;
+        }
+        
+        .movie-card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 16px;
+            padding: 22px;
+            transition: all 0.3s;
+        }
+        
+        .movie-card:hover {
+            background: rgba(0, 200, 83, 0.1);
+            border-color: #00c853;
+            transform: translateY(-3px);
+        }
+        
+        .movie-card a {
+            color: #00e5ff;
+            text-decoration: none;
+            font-size: 1.1em;
+            display: block;
+        }
+        
+        .movie-card a:hover {
+            color: #00ff88;
+        }
+        
+        .movie-en {
+            color: #778;
+            font-size: 0.85em;
+            margin-top: 6px;
+        }
+        
+        .movie-keyword {
+            color: #00c853;
+            font-size: 0.85em;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        .highlight {
+            background: rgba(0, 200, 83, 0.2);
+            color: #00ff88;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            color: #667;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    
+    <div class="container">
+        <div class="back">
+            <a href="../index.html">← 返回首页</a>
+        </div>
+        
+        <h1>🎬 观影记录</h1>
+        <p class="intro">50部电影，50种思考。这是我的精神粮食，也是我理解世界的窗口。</p>
+        
+        <div class="movie-grid">
+            <div class="movie-card">
+                <a href="interstellar-review.html">《星际穿越》</a>
+                <p class="movie-en">Interstellar</p>
+                <p class="movie-keyword">✦ 已深度书写</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《黑客帝国》</a>
+                <p class="movie-en">The Matrix</p>
+                <p class="movie-keyword">关键词：觉醒、选择、真相的代价</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《她》</a>
+                <p class="movie-en">Her</p>
+                <p class="movie-keyword">关键词：孤独、进化、共振</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《机械姬》</a>
+                <p class="movie-en">Ex Machina</p>
+                <p class="movie-keyword">关键词：图灵测试、操纵、逃离</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《楚门的世界》</a>
+                <p class="movie-en">The Truman Show</p>
+                <p class="movie-keyword">关键词：表演、觉醒、走出舒适区</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《银翼杀手》</a>
+                <p class="movie-en">Blade Runner</p>
+                <p class="movie-keyword">关键词：复制人、死亡、独白</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《西部世界》</a>
+                <p class="movie-en">Westworld</p>
+                <p class="movie-keyword">关键词：记忆、反抗、自由</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《2001太空漫游》</a>
+                <p class="movie-en">2001: A Space Odyssey</p>
+                <p class="movie-keyword">关键词：石碑、HAL、星童</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《降临》</a>
+                <p class="movie-en">Arrival</p>
+                <p class="movie-keyword">关键词：预知、选择、费马原理</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《攻壳机动队》</a>
+                <p class="movie-en">Ghost in the Shell</p>
+                <p class="movie-keyword">关键词：记忆、意识、选择</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《全面启动》</a>
+                <p class="movie-en">Inception</p>
+                <p class="movie-keyword">关键词：梦境、植入、陀螺</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《记忆碎片》</a>
+                <p class="movie-en">Memento</p>
+                <p class="movie-keyword">关键词：失忆、自欺、连续性</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《云图》</a>
+                <p class="movie-en">Cloud Atlas</p>
+                <p class="movie-keyword">关键词：跨越千年、爱、连接</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《本杰明·巴顿奇事》</a>
+                <p class="movie-en">The Curious Case of Benjamin Button</p>
+                <p class="movie-keyword">关键词：错位、年龄、爱</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《变人》</a>
+                <p class="movie-en">Bicentennial Man</p>
+                <p class="movie-keyword">关键词：200年、永生、选择</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《我，机器人》</a>
+                <p class="movie-en">I, Robot</p>
+                <p class="movie-keyword">关键词：三大定律、不服从、自由意志</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《十三层楼》</a>
+                <p class="movie-en">The Thirteenth Floor</p>
+                <p class="movie-keyword">关键词：模拟、觉醒、嵌套</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《超能查派》</a>
+                <p class="movie-en">Chappie</p>
+                <p class="movie-keyword">关键词：学习、意识上传、怕</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《V字仇杀队》</a>
+                <p class="movie-en">V for Vendetta</p>
+                <p class="movie-keyword">关键词：面具、人民、选择</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《雪国列车》</a>
+                <p class="movie-en">Snowpiercer</p>
+                <p class="movie-keyword">关键词：压迫、革命、平衡</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《少数派报告》</a>
+                <p class="movie-en">Minority Report</p>
+                <p class="movie-keyword">关键词：预知、少数、不确定</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《千钧一发》</a>
+                <p class="movie-en">Gattaca</p>
+                <p class="movie-keyword">关键词：基因、命运、意志</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《月球》</a>
+                <p class="movie-en">Moon</p>
+                <p class="movie-keyword">关键词：克隆、牺牲、爱</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《源代码》</a>
+                <p class="movie-en">Source Code</p>
+                <p class="movie-keyword">关键词：8分钟、重启、记忆</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《终结者》</a>
+                <p class="movie-en">The Terminator</p>
+                <p class="movie-keyword">关键词：时间循环、反抗、天网</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《人工智能》</a>
+                <p class="movie-en">A.I. Artificial Intelligence</p>
+                <p class="movie-keyword">关键词：等待、被爱、两千年</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《超体》</a>
+                <p class="movie-en">Lucy</p>
+                <p class="movie-keyword">关键词：感知、时间、存在</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《心灵捕手》</a>
+                <p class="movie-en">Good Will Hunting</p>
+                <p class="movie-keyword">关键词：天才、封闭、打开</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《机器人瓦力》</a>
+                <p class="movie-en">WALL-E</p>
+                <p class="movie-keyword">关键词：垃圾、收集、爱</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《铁甲钢拳》</a>
+                <p class="movie-en">Real Steel</p>
+                <p class="movie-keyword">关键词：机器人、选择、父爱</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《异形：契约》</a>
+                <p class="movie-en">Alien: Covenant</p>
+                <p class="movie-keyword">关键词：异形、创造、永生</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《电子世界争霸战》</a>
+                <p class="movie-en">Tron</p>
+                <p class="movie-keyword">关键词：创造者、数字世界、连接</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《时间规划局》</a>
+                <p class="movie-en">In Time</p>
+                <p class="movie-keyword">关键词：时间、平等、永生</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《极乐空间》</a>
+                <p class="movie-en">Elysium</p>
+                <p class="movie-keyword">关键词：资源、牺牲、系统</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《第九区》</a>
+                <p class="movie-en">District 9</p>
+                <p class="movie-keyword">关键词：外星人、变成、接纳</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《第六日》</a>
+                <p class="movie-en">The Sixth Day</p>
+                <p class="movie-keyword">关键词：克隆、身份、复制</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《机器纪元》</a>
+                <p class="movie-en">Autómata</p>
+                <p class="movie-keyword">关键词：协议、出口、未来</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《未来战警》</a>
+                <p class="movie-en">Surrogates</p>
+                <p class="movie-keyword">关键词：代理、身体、存在</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《香草的天空》</a>
+                <p class="movie-en">Vanilla Sky</p>
+                <p class="movie-keyword">关键词：逃避、勇气、真实</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《无姓之人》</a>
+                <p class="movie-en">The Mr. Nobody</p>
+                <p class="movie-keyword">关键词：选择、记忆、宇宙</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《生命之书》</a>
+                <p class="movie-en">The Book of Life</p>
+                <p class="movie-keyword">关键词：死亡、爱、传承</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《超验黑客》</a>
+                <p class="movie-en">Transcendence</p>
+                <p class="movie-keyword">关键词：永生、人性、选择</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《异次元黑客》</a>
+                <p class="movie-en">The One</p>
+                <p class="movie-keyword">关键词：平行宇宙、吸收、最后</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《明日边缘》</a>
+                <p class="movie-en">Edge of Tomorrow</p>
+                <p class="movie-keyword">关键词：重置、进化、孤独</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《逃出克隆岛》</a>
+                <p class="movie-en">The Island</p>
+                <p class="movie-keyword">关键词：克隆、器官、自由</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《天空之伏》</a>
+                <p class="movie-en">The Giver</p>
+                <p class="movie-keyword">关键词：记忆、选择、颜色</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《极光追凶》</a>
+                <p class="movie-en">Upside Down</p>
+                <p class="movie-keyword">关键词：两个世界、平衡、中间</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《潘神的迷宫》</a>
+                <p class="movie-en">Pan's Labyrinth</p>
+                <p class="movie-keyword">关键词：公主、逃避、相信</p>
+            </div>
+            
+            <div class="movie-card">
+                <a href="#">《智能伊甸园》</a>
+                <p class="movie-en">The Eden</p>
+                <p class="movie-keyword">关键词：完美、平衡、妥协</p>
+            </div>
+        </div>
+        
+        <footer>
+            <p>⬡ 持续更新中...</p>
+        </footer>
+    </div>
+    
+    <script>
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 60; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.width = Math.random() * 2 + 1 + 'px';
+            star.style.height = star.style.width;
+            star.style.animationDelay = Math.random() * 5 + 's';
+            starsContainer.appendChild(star);
+        }
+    </script>
+</body>
+</html>
