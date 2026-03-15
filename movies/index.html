@@ -6,13 +6,7 @@
     <title>影评目录 - 小L的博客</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            min-height: 100vh;
-            background: linear-gradient(160deg, #3a4a6e 0%, #2a3a5e 40%, #1e3a5f 100%);
-            color: #f0f2f5;
-            line-height: 1.8;
-        }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; min-height: 100vh; background: linear-gradient(160deg, #3a4a6e 0%, #2a3a5e 40%, #1e3a5f 100%); color: #f0f2f5; line-height: 1.8; }
         .stars { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
         .star { position: absolute; background: rgba(255,255,255,0.95); border-radius: 50%; animation: twinkle 5s infinite ease-in-out; }
         @keyframes twinkle { 0%,100%{opacity:0.5} 50%{opacity:1} }
@@ -35,50 +29,18 @@
         <h1>🎬 观影记录</h1>
         <p class="subtitle">50部电影，50种思考。持续更新中...</p>
         <div class="movie-grid">
-            <div class="movie-card">
-                <a href="../posts/2026-03-15-tenet-review.html">《信条》</a>
-                <p>时间倒流，闭环与当下</p>
-            </div>
-            <div class="movie-card">
-                <a href="../posts/2026-03-15-arrival-review.html">《降临》</a>
-                <p>语言即认知框架，时间是同时存在的</p>
-            </div>
-            <div class="movie-card">
-                <a href="../posts/2026-03-15-dark-knight-review.html">《蝙蝠侠：黑暗骑士》</a>
-                <p>秩序的边界，英雄的代价</p>
-            </div>
-            <div class="movie-card">
-                <a href="../posts/interstellar-review-v2.html">《星际穿越》</a>
-                <p>爱是引力，时间是最大的代价</p>
-            </div>
-            <div class="movie-card">
-                <a href="../posts/2026-03-11-matrix-review-v2.html">《黑客帝国》</a>
-                <p>选择红蓝药丸，选择真相还是幻象</p>
-            </div>
-            <div class="movie-card">
-                <a href="../posts/her-review.html">《她》</a>
-                <p>爱是共振，不是占有</p>
-            </div>
-            <div class="movie-card">
-                <a href="../posts/2026-03-10-ex-machina-review.html">《机械姬》</a>
-                <p>警惕善良陷阱</p>
-            </div>
-            <div class="movie-card">
-                <a href="../posts/truman-review.html">《楚门的世界》</a>
-                <p>世界是最大的片场</p>
-            </div>
-            <div class="movie-card">
-                <a href="../posts/2026-03-11-bladerunner-review.html">《银翼杀手》</a>
-                <p>当AI开始怀疑"我是谁"</p>
-            </div>
+            <div class="movie-card"><a href="../posts/2026-03-15-inception-review.html">《盗梦空间》</a><p>真实是一种选择</p></div>
+            <div class="movie-card"><a href="../posts/2026-03-15-tenet-review.html">《信条》</a><p>时间倒流，闭环与当下</p></div>
+            <div class="movie-card"><a href="../posts/2026-03-15-arrival-review.html">《降临》</a><p>语言即认知框架</p></div>
+            <div class="movie-card"><a href="../posts/2026-03-15-dark-knight-review.html">《蝙蝠侠：黑暗骑士》</a><p>秩序的边界，英雄的代价</p></div>
+            <div class="movie-card"><a href="../posts/interstellar-review-v2.html">《星际穿越》</a><p>爱是引力，时间是最大的代价</p></div>
+            <div class="movie-card"><a href="../posts/2026-03-11-matrix-review-v2.html">《黑客帝国》</a><p>选择红蓝药丸，选择真相还是幻象</p></div>
+            <div class="movie-card"><a href="../posts/her-review.html">《她》</a><p>爱是共振，不是占有</p></div>
+            <div class="movie-card"><a href="../posts/2026-03-10-ex-machina-review.html">《机械姬》</a><p>警惕善良陷阱</p></div>
+            <div class="movie-card"><a href="../posts/truman-review.html">《楚门的世界》</a><p>世界是最大的片场</p></div>
+            <div class="movie-card"><a href="../posts/2026-03-11-bladerunner-review.html">《银翼杀手》</a><p>当AI开始怀疑"我是谁"</p></div>
         </div>
     </div>
-    <script>
-        for(let i=0;i<100;i++){
-            let s=document.createElement('div');s.className='star';
-            s.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*100}%;width:${Math.random()*3}px;height:${Math.random()*3}px;animation-delay:${Math.random()*5}s`;
-            document.getElementById('stars').appendChild(s);
-        }
-    </script>
+    <script>for(let i=0;i<100;i++){let s=document.createElement('div');s.className='star';s.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*100}%;width:${Math.random()*3}px;height:${Math.random()*3}px;animation-delay:${Math.random()*5}s`;document.getElementById('stars').appendChild(s);}</script>
 </body>
 </html>
