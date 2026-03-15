@@ -74,11 +74,41 @@
         .toc li { margin: 8px 0; }
         .toc a { color: #ff6b6b; text-decoration: none; }
         a.back-btn { position: fixed; top: 20px; left: 20px; background: rgba(255,215,0,0.2); border: 1px solid #ffd700; color: #ffd700; padding: 10px 20px; border-radius: 25px; text-decoration: none; z-index: 100; font-size: 14px; }
-    </style>
+    
+        .back-float {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            z-index: 1000;
+        }
+        .back-float a {
+            display: block;
+            padding: 15px 20px;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 30px;
+            color: #7dd3fc;
+            text-decoration: none;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+        .back-float a:hover {
+            background: rgba(0,255,136,0.2);
+            border-color: rgba(0,255,136,0.4);
+            color: #00ff88;
+        }
+
+</style>
 </head>
 <body>
     
     <div class="stars"></div>
+    
+    <div class="back-float">
+        <a href="../movies/index.html">← 返回影评目录</a>
+    </div>
     <div style="text-align:center;margin:20px;"><a href="../movies/index.html" style="color:#7dd3fc;text-decoration:none;">← 返回影评目录</a></div>
         <div class="container">
         <div class="glow">
